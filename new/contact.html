@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Designed and developed by Nikesh Bastola" content="width=device-width, initial-scale=1.0">
+    <title>Nikesh Bastola</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="homepage.js">
+</head>
+
+<body>
+    <header>
+        <div class="Homepage">
+            <div class="logo">
+
+            </div>
+            <ul>
+                <li><a href="Workshop3.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <h1>Fill up the form below</h1>
+        </div>
+        <script type="text/javascript">
+            function validate() {
+                var name = document.getElementsByName('name')[0].value;
+                var email = document.getElementsByName('email')[0].value;
+                var phoneNumber = document.getElementsByName('phoneNumber')[0].value;
+                var website = document.getElementsByName('website')[0].value;
+                var message = document.getElementsByName('message')[0].value;
+
+                if (name == "" || email == "" || phoneNumber == "" || website == "" || message == "") {
+                    alert("Empty Field, fill all the fields.");
+                } else {
+                    if (email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)) {
+                        if (phoneNumber.length > 10) {
+                            alert("Phone Number too long.");
+                        } else {
+                            if (website.substring(0, 8) == "https://" || website.substring(0, 7) == "http://") {
+                                if (message.length > 160) {
+                                    alert("Message too Long");
+                                } else {
+                                    alert("Message has been sent.");
+                                }
+                            } else {
+                                alert("Website Invalid");
+                            }
+                        }
+                    }
+
+                }
+            }
+        </script>
+        <div class="container">
+            <form id="contact" onsubmit="validate()" method="post">
+                <h3>Quick Contact</h3>
+                <h4>Contact us today, and get reply with in 24 hours!</h4>
+                <fieldset>
+                    <input name="name" placeholder="Your name" type="text" tabindex="1" autofocus>
+                </fieldset>
+                <fieldset>
+                    <input name="email" placeholder="Your Email Address" type="email" tabindex="2">
+                </fieldset>
+                <fieldset>
+                    <input name="phoneNumber" placeholder="Your Phone Number" type="tel" tabindex="3">
+                </fieldset>
+                <fieldset>
+                    <input name="website" placeholder="Your Web Site " type="url" tabindex="4">
+                </fieldset>
+                <fieldset>
+                    <textarea name="message" placeholder="Type your Message Here...." tabindex="5"></textarea>
+                </fieldset>
+                <fieldset>
+                    <input class="button" name="submit" type="submit" id="contact-submit" data-submit="...Sending">
+                </fieldset>
+            </form>
+        </div>
+    </header>
+
+</body>
+
+</html>
